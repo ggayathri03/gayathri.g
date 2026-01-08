@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root@39</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Schema generation -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show SQL in logs -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Connection pool (built-in) -->
+        <property name="hibernate.connection.pool_size">10</property>
+
+        <!-- Entity mappings -->
+        <mapping class="com.example.hibernatecrud.entity.Customer"/>
+        <mapping class="com.example.hibernatecrud.entity.Order"/>
+        <mapping class="com.example.hibernatecrud.entity.Dept"/>
+        <mapping class="com.example.hibernatecrud.entity.Emp"/>
+    </session-factory>
+</hibernate-configuration>
