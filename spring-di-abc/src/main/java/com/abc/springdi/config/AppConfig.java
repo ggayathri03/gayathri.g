@@ -12,13 +12,13 @@ import java.util.List;
 @Configuration
 public class AppConfig {
 
-    // Define a Department bean
+    
     @Bean
     public Department department() {
         return new Department("Engineering"); // change as needed
     }
 
-    // Constructor injection for employees
+    
     @Bean(name = "John")
     public Employee empJohn(Department department) {
         return new Employee(1, "John", department);
@@ -29,7 +29,7 @@ public class AppConfig {
         return new Employee(2, "Jane", department);
     }
 
-    // Setter injection for Company + autowiring list of employees
+    
     @Bean
     public Company company(List<Employee> employees, Department department) {
         Company company = new Company();
