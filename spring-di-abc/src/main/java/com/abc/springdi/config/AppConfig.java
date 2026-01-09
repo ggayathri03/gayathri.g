@@ -15,7 +15,7 @@ public class AppConfig {
     
     @Bean
     public Department department() {
-        return new Department("Engineering"); // change as needed
+        return new Department("Engineering"); 
     }
 
     
@@ -33,9 +33,9 @@ public class AppConfig {
     @Bean
     public Company company(List<Employee> employees, Department department) {
         Company company = new Company();
-        company.setName("ABC");                 // Company name set via setter
-        company.setDepartment(department);      // Setter injection
-        company.setEmployees(employees);        // Autowires ALL Employee beans
+        company.setName("ABC");                 
+        company.setDepartment(department);    
+        company.setEmployees(employees);        
         return company;
     }
 }
