@@ -4,9 +4,9 @@ package com.abc.springdi.model;
 import java.util.List;
 
 public class Company {
-    private String name;              // e.g., "ABC"
-    private Department department;    // injected via setter
-    private List<Employee> employees; // autowired list of Employee beans
+    private String name;            
+    private Department department;    
+    private List<Employee> employees;
 
     public Company() {}
 
@@ -14,11 +14,11 @@ public class Company {
     public Department getDepartment() { return department; }
     public List<Employee> getEmployees() { return employees; }
 
-    // Setter Injection
+    
     public void setName(String name) { this.name = name; }
     public void setDepartment(Department department) { this.department = department; }
 
-    // Autowiring-Ready Setter (Spring injects all Employee beans into this list)
+    
     public void setEmployees(List<Employee> employees) {
     	this.employees = employees; 
     	}
