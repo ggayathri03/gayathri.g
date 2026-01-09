@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+    <!-- Department bean -->
+    <bean id="department" class="com.abc.springdi.model.Department">
+        <property name="name" value="Engineering"/>
+    </bean>
+
+    <!-- Employees using constructor injection -->
+    <bean id="empJohn" class="com.abc.springdi.model.Employee">
+        <constructor-arg value="1"/>
+        <constructor-arg value="John"/>
+        <constructor-arg ref="department"/>
+    </bean>
+
+    <bean id="empJane" class="com.abc.springdi.model.Employee">
+        <constructor-arg value="2"/>
+        <constructor-arg value="Jane"/>
+        <constructor-arg ref="department"/>
+    </bean>
+
+    <!-- Company using setter injection and autowiring the list of employees -->
+    <bean id="company" class="com.abc.springdi.model.Company" autowire="byType">
+        <property name="name" value="ABC"/>
+        <!-- department injected byType -->
+        <!-- employees list autowired byType (all Employee beans) -->
+    </bean>
+</beans>
