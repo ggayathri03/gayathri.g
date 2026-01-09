@@ -4,9 +4,9 @@ package com.abc.springdi.model;
 public class Employee {
     private int id;
     private String name;
-    private Department department; // injected via constructor
+    private Department department; 
 
-    // Constructor injection: Spring will resolve Department bean
+    
     public Employee(int id, String name, Department department) {
         this.id = id;
         this.name = name;
